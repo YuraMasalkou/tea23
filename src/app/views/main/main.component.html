@@ -1,0 +1,72 @@
+<div class="container">
+  <div style="background-image: url(../../../assets/images/image_10.png) ">
+    <div class=" sl  " style="; padding-top: 10rem!important; padding-bottom: 10rem!important">
+      <h5 class="mb-3  text-start text-dark fs-1 text fw-bold ">Скидки на травянные чаи</h5>
+      <p class="fs-4 mb-5 text-start text-dark">Узнай все подробности, просмотрев каталог</p>
+      <a [routerLink]='"/catalog"' class="button hvr-glow btn btn-primary btn-lg ps-4 pe-4">
+        Посмотреть
+      </a>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <h1 class="text-center m-5 fw-bold fs-2 text">Ответы на часто задаваемые вопросы</h1>
+  <div class="accordion  col-lg-8 mx-auto wow animate__backInLeft " id="accordion">
+    <ngb-accordion #acc="ngbAccordion" class="" activeIds="config-panel-one">
+      <ngb-panel class="p-3 pe-5 bg-primary text-white rounded mt-2" title="Собираете ли вы подарочные боксы?">
+        <ng-template ngbPanelContent>
+          Да, у нас есть такая услуга. Мы можем собрать подарочный бокс на любой вкус, объем и стоимость!
+        </ng-template>
+      </ngb-panel>
+      <ngb-panel class="accordion  col-lg-8 mx-auto wow animate__backInLeft" title="Сколько у вас разновидностей чая?">
+        <ng-template ngbPanelContent>
+          На данный момент наша чайная коллекция состоит их шести видов чая. Но мы уже работаем над ее
+          расширением. Оставайтесь с нами и Вы не упустите наши чайные новинки!
+        </ng-template>
+      </ngb-panel>
+      <ngb-panel class="accordion  col-lg-8 mx-auto wow animate__backInLeft"
+                 title="В какой срок осуществляется доставка?">
+        <ng-template ngbPanelContent>
+          Доставка в пределах города осуществляется в течение часа после подтверждения заказа!
+        </ng-template>
+      </ngb-panel>
+      <ngb-panel class="accordion  col-lg-8 mx-auto wow animate__backInLeft"
+                 title="У вас обновляется ассортимент??">
+        <ng-template ngbPanelContent>
+          Да, уже в ближайшее время Вас порадуют три новых вида чая! И это не предел! Оставайтесь с нами и Вы
+          не упустите наши чайные новинки!
+        </ng-template>
+      </ngb-panel>
+      <ngb-panel class="accordion  col-lg-8 mx-auto wow animate__backInLeft"
+                 title="Какого объема у вас пачки чая?">
+        <ng-template ngbPanelContent>
+          В наличи три вида упаковки: 200гр, 150гр и 50гр.
+        </ng-template>
+      </ngb-panel>
+
+    </ngb-accordion>
+  </div>
+</div>
+
+<ng-template #popup>
+  <div class="" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                  (click)="closeModal()"></button>
+        </div>
+        <div class="modal-body">
+          Посмотрите наши чайные коллекции!
+        </div>
+        <div class="modal-footer">
+          <a type="button" (click)="closeModal()" class="btn hvr-bounce-in btn btn-primary btn-lg ps-5 pe-5"
+             [routerLink]="['/catalog']"
+             data-bs-dismiss="modal">Смотреть</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+

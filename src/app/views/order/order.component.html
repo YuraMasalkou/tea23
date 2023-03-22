@@ -1,0 +1,112 @@
+<div class="container good-response" id="forms-input">
+
+  <h1 class="text-center m-5 fw-bold fs-2 text">Сделать заказ</h1>
+  <div class="col-lg-6 mx-auto">
+    <form class="row g-3" novalidate [formGroup]="checkoutForm">
+      <div class="col-md-6">
+        <label for="inputProduct" class="form-label">Товар*</label>
+        <input type="text" class="form-control" id="inputProduct"
+               formControlName="product" readonly>
+      </div>
+      <div class="col-md-6">
+        <label for="inputComment" class="form-label">Комментарий к заказу (необязательно)</label>
+        <input type="text" class="form-control"
+               formControlName="comment"
+               id="inputComment" >
+      </div>
+      <div class="col-md-4">
+        <label for="inputName" class="form-label">Имя</label>
+        <input type="text" class="form-control"
+               formControlName="name" required
+               id="inputName">
+        <div class="w-100" *ngIf="checkoutForm.get('name')?.invalid &&
+              (checkoutForm.get('name')?.touched || checkoutForm.get('name')?.dirty)">
+          <div class="invalid-feedback" *ngIf="checkoutForm.get('name')?.errors?.['required']">
+            Введите имя
+          </div>
+          <div class="invalid-feedback" *ngIf="checkoutForm.get('name')?.errors?.['pattern']">
+            Имя должно состоять только из букв
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label for="inputSName" class="form-label">Фамилия</label>
+        <input type="text" class="form-control"
+               formControlName="last_name"
+               id="inputSName" required>
+        <div class="w-100" *ngIf="checkoutForm.get('last_name')?.invalid &&
+              (checkoutForm.get('last_name')?.touched || checkoutForm.get('last_name')?.dirty)">
+          <div class="invalid-feedback" *ngIf="checkoutForm.get('last_name')?.errors?.['required']">
+            Введите фамилию
+          </div>
+          <div class="invalid-feedback" *ngIf="checkoutForm.get('last_name')?.errors?.['pattern']">
+            Фамилия должна состоять только из букв
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4">
+        <label for="inputPhone" class="form-label">Телефон</label>
+        <input type="tel" class="form-control"
+               formControlName="phone" required
+               id="inputPhone">
+        <div class="w-100" *ngIf="checkoutForm.get('phone')?.invalid &&
+              (checkoutForm.get('phone')?.touched || checkoutForm.get('phone')?.dirty)">
+          <div class="invalid-feedback" *ngIf="checkoutForm.get('phone')?.errors?.['required']">
+            Введите номер телефона
+          </div>
+          <div class="invalid-feedback" *ngIf="checkoutForm.get('phone')?.errors?.['pattern']">
+            Номер телефноа не может содержать буквы и должен состоять из 11 цифр
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <label for="inputCountry" class="form-label">Страна</label>
+        <input type="text" class="form-control"
+               formControlName="country" required
+               id="inputCountry">
+        <div class="invalid-feedback" *ngIf="checkoutForm.get('country')?.invalid &&
+              (checkoutForm.get('country')?.touched || checkoutForm.get('country')?.dirty)
+              && checkoutForm.get('country')?.errors?.['required']">
+          Введите страну
+        </div>
+      </div>
+      <div class="col-md-6">
+        <label for="inputIndex" class="form-label">Индекс</label>
+        <input type="number" class="form-control"
+               formControlName="zip" required
+               id="inputIndex">
+        <div class="invalid-feedback" *ngIf="checkoutForm.get('zip')?.invalid &&
+              (checkoutForm.get('zip')?.touched || checkoutForm.get('zip')?.dirty)
+              && checkoutForm.get('zip')?.errors?.['required']">
+          Введите индекс
+        </div>
+      </div>
+      <div class="col-md-12">
+        <label for="inputAddress" class="form-label">Адрес</label>
+        <input type="text" class="form-control"
+               formControlName="address" required
+               id="inputAddress">
+        <div class="w-100" *ngIf="checkoutForm.get('address')?.invalid &&
+              (checkoutForm.get('address')?.touched || checkoutForm.get('address')?.dirty)">
+          <div class="invalid-feedback" *ngIf="checkoutForm.get('address')?.errors?.['required']">
+            Введите адрес
+          </div>
+          <div class="invalid-feedback" *ngIf="checkoutForm.get('address')?.errors?.['pattern']">
+            В поле «Адрес» можно вводить: буквы, цифры, пробелы, дефис и слеш
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <button type="button"  class="button hvr-grow-shadow btn  btn-primary" id="btn-finaly" (click)="createOrder()">
+          Отправить
+        </button>
+        <div class="invalid-request" *ngIf="!successResponse"> «Произошла ошибка. Попробуйте еще раз. (Убедитесь, что
+          все поля заполнены верно)»
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="cool-request" *ngIf="successResponse && cleanForm"> «Спасибо за заказ!»</div>
+
+

@@ -1,1 +1,101 @@
-/* You can add global styles to this file, and also import other style files */
+.slick-prev {
+  background-image: url("assets/images/images/ns.png");
+  width: 42px;
+  height: 40px;
+  z-index: 9999999
+}
+
+
+.slick-prev:before {
+  font-size: 0px;
+
+}
+
+.slick-prev:hover, .slick-prev:focus {
+  color: transparent;
+  outline: none;
+  background: url("assets/images/images/ns.png");
+}
+
+.slick-next {
+  background-image: url("assets/images/images/backs.png");
+  width: 42px;
+  height: 40px;
+  z-index: 9999999
+
+}
+
+.slick-next:before {
+  font-size: 0px;
+
+}
+
+.slick-next:hover, .slick-next:focus {
+  color: transparent;
+  outline: none;
+  background: url("assets/images/images/backs.png");
+}
+
+.sl {
+
+  margin-top: 90px;
+  margin-left: 10%;
+  margin-bottom: 37px;
+
+}
+
+.ui-icon {
+  top: 40%;
+}
+
+.modal{
+  display: block;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.48);
+}
+.modal-dialog{
+  top: 30%;
+}
+.loader-bg {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.49);
+}
+
+.loader {
+  border: 15px solid #f3f3f3;
+  border-top: 15px solid blue;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg)
+  }
+  100% {
+    transform: rotate(360deg)
+  }
+
+
+}
+
+
+
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';

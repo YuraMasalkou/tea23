@@ -1,0 +1,21 @@
+input.ng-invalid.ng-dirty,
+input.ng-invalid.ng-touched {
+  border-color: red;
+}
+
+.invalid-feedback {
+  display: block;
+}
+
+.invalid-request {
+  color: red;
+  display: block;
+}
+
+.cool-request {
+  color: green;
+  font-size: 56px;
+  display: block;
+  text-align: center;
+}
+
